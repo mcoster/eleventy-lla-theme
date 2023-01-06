@@ -5,11 +5,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="{{ '/static/css/style.css' | url }}">
 
+{% if noindex %}
+<meta name=”robots” content=”noindex, follow”>
+{% endif %}
+
 {% metagen
   title=title or metadata.title,
   desc=description or metadata.description,
   url=url + page.url,
-  name=meta.authorName
+  name=site.authorName
 %}
 
 <title>{{ title }}</title>

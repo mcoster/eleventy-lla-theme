@@ -1,8 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container is-max-desktop">
     <div class="navbar-brand">
-      <a class="navbar-item my-site-logo is-link is-size-3" href="tel:{{ meta.phoneDial }}">
-        <strong>{{ meta.phone }}</strong>
+      <a class="navbar-item my-site-logo is-link is-size-3" href="tel:{{ site.phoneDial }}">
+        <strong>{{ site.phone }}</strong>
       </a>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarTarget">
@@ -30,16 +30,16 @@
           </a>
           {% endfor %}
           </div>
-
-          <a class="navbar-item" href="/about">
-            About
-          </a>
-
-          <a class="navbar-item" href="/contact">
-            Contact
-          </a>
-
         </div>
+
+        <a class="navbar-item" href="/about">
+          About
+        </a>
+
+        <a class="navbar-item" href="/contact">
+          Contact
+        </a>
+
       </div>
     </div>
   </div>

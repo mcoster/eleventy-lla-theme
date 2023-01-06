@@ -11,13 +11,14 @@
       <p class="subtitle">
         {{ subtitle }}
       </p>
-      <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+      <a class="button is-primary is-medium" href="tel:{{ site.phoneDial }}">Call Now: {{ site.phone }}</a>
     </div>
   </div>
 </section>
 
 {% set cls = cycler("columns", "columns is-flex-direction-row-reverse") %}
 {% set rws = cycler("section", "section has-background-light") %}
+
 {% for section in collections.components | pageFilter(page.fileSlug) | sortedCollection() %}
 <section class="{{ rws.next() }}">
   <div class="container is-max-desktop content">
@@ -27,7 +28,7 @@
         {{ section.templateContent | safe }}
         {% if loop.index == 1 %}
         <div class="has-text-centered pt-4">
-        <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+        <a class="button is-primary is-medium" href="tel:{{ site.phoneDial }}">Call Now: {{ site.phone }}</a>
         </div>
         {% endif %}
       </div>
@@ -41,7 +42,7 @@
   </div>
   {% if loop.index % 3 == 0 %}
   <div class="container is-max-desktop has-text-centered pt-6">
-    <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+    <a class="button is-primary is-medium" href="tel:{{ site.phoneDial }}">Call Now: {{ site.phone }}</a>
   </div>
   {% endif %}
 </section>

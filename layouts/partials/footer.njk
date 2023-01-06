@@ -18,21 +18,21 @@
     <div class="column">
       <p class="is-size-4 pb-1">Service Areas</p>
       <ul>
-        {% for area in meta.secondaryLocations %}
+        {% for area in site.secondaryLocations %}
         <li>{{ area }}</li>
         {% endfor %}
       </ul>
     </div>
     <div class="column is-half">
       <div class="image is-3by2">
-        {{ meta.mapEmbed | safe }}
+        {{ site.mapEmbed | safe }}
       </div>
     </div>
   </div>
 </div>
 
 <div class="container is-max-desktop pt-6 pb-3">
-  <p>&copy; {% year %} {{ meta.siteName }}, all rights reserved.</p>
+  <p>&copy; {% year %} {{ site.siteName }}, all rights reserved.</p>
   <p class="is-size-7 pt-2">
     <a class="has-text-light" href="/privacy-policy">Privacy Policy</a> |
     <a class="has-text-light" href="/terms">Terms & Conditions</a>
