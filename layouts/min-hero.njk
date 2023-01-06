@@ -1,0 +1,21 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+
+<section class="hero is-link is-medium">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h1 class="title">
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content py-5">
+    {{ content | safe }}
+  </div>
+</section>
+
+{% endblock %}
