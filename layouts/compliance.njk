@@ -1,0 +1,15 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h1 class="title pb-3">
+      {{ title }}
+    </h1>
+    <p>Last updated: {{ page.date | niceDate }}</p>
+    {{ content | safe }}
+  </div>
+</section>
+
+{% endblock %}

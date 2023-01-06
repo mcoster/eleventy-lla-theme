@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    {% include "./partials/head.njk" %}
+    {% endblock %}
+  </head>
+  <body class="page--{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
+    <header id="masthead" class="site-header" role="banner">
+      {% block header %}
+      {% include "./partials/header.njk" %}
+      {% endblock %}
+    </header>
+    <div id="content">
+      <main>
+        {% block main %}
+        {{ content | safe }}
+        {% endblock %}
+      </main>
+    </div>
+    <footer id="colophon" class="footer site-footer has-text-centered has-background-grey-dark has-text-light" role="contentinfo">
+      {% include "./partials/footer.njk" %}
+    </footer>
+  </body>
+</html>

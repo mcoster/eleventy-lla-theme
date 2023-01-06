@@ -1,0 +1,51 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+<!-- Hero Image and text -->
+<section class="hero is-info is-medium my-hero-image" style="background-image: url('/static/images/{{ heroImage }}');">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h1 class="title">
+        {{ title }}
+      </h1>
+      <p class="subtitle">
+        {{ subtitle }}
+      </p>
+      <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+    </div>
+  </div>
+</section>
+
+{% set cls = cycler("columns", "columns is-flex-direction-row-reverse") %}
+{% set rws = cycler("section", "section has-background-light") %}
+{% for section in collections.components | pageFilter(page.fileSlug) | sortedCollection() %}
+<section class="{{ rws.next() }}">
+  <div class="container is-max-desktop content">
+    <div class="{{ cls.next() }}">
+      <div class="column is-three-fifths">
+        <h2 class="title">{{ section.data.title }}</h2>
+        {{ section.templateContent | safe }}
+        {% if loop.index == 1 %}
+        <div class="has-text-centered pt-4">
+        <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="column">
+        <img src="/static/images/{{ section.data.image }}">
+        {% if loop.index == 1 %}
+          {% include "./partials/contact-form.njk" %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if loop.index % 3 == 0 %}
+  <div class="container is-max-desktop has-text-centered pt-6">
+    <a class="button is-primary is-medium" href="tel:{{ meta.phoneDial }}">Call Now: {{ meta.phone }}</a>
+  </div>
+  {% endif %}
+</section>
+
+{% endfor %}
+
+{% endblock %}
