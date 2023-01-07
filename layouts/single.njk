@@ -33,7 +33,7 @@
         {% endif %}
       </div>
       <div class="column">
-        <img src="/static/images/{{ section.data.image }}">
+        <img src="/static/images/{{ section.data.image }}" alt="{{ section.data.imageAlt or site.primaryKeyword | title }}">
         {% if loop.index == 1 %}
           {% include "./partials/contact-form.njk" %}
         {% endif %}
