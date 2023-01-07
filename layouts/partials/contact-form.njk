@@ -1,0 +1,42 @@
+<form
+  name="{{ site.siteName }}"
+  class="box"
+  action="/thank-you"
+  method="post"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+
+  <div class="field">
+    <div class="control">
+      <input class="input is-medium" type="text" required name="name" placeholder="Your name" />
+    </div>
+  </div>
+  
+  <div class="control">
+      <div class="field">
+      <input class="input is-medium" type="email" required name="email" placeholder="Your email" />
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <input class="input is-medium" type="phone" required name="phone" placeholder="Your phone number" />
+    </div>
+  </div>
+
+  <input type="url" id="submissionURL" name="submissionURL" value="" hidden />
+
+  <input type="url" id="redirectURL" name="redirectURL" value="{{ '/static/css/style.css' | url }}" hidden />
+    
+  <div class="field">
+    <div class="control">
+      <button class="button is-link is-fullwidth is-medium" type="submit">Submit</button>
+    </div>
+  </div>
+
+</form>
+
+<script>
+    document.getElementById('submissionURL').value = document.location.href;
+</script>
